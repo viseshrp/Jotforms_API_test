@@ -1,4 +1,5 @@
 $(document).ready(function () {
+    $('body').bootstrapMaterialDesign();
 
             $.LoadingOverlay("show");
 
@@ -14,7 +15,7 @@ $(document).ready(function () {
 
             function getData() {
                 $.ajax({
-                    url: ,
+                    url: '',
                     type: "GET",
                     async: true,
                     success: function (data) {
@@ -24,7 +25,7 @@ $(document).ready(function () {
                 });
             }
 
-            getData();
+            //getData();
 
 });
 
