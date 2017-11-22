@@ -1,31 +1,21 @@
 $(document).ready(function () {
     $('body').bootstrapMaterialDesign();
 
-            $.LoadingOverlay("show");
 
-            $.when(jQuery.getJSON('')).done(function (data) {
-                $.LoadingOverlay("hide");
+    JF.initialize( {apiKey: "7d7ba832de08daf7ed84f989d65eefc9"} );
 
-                var versions = data.versions.split(',');
-                versions_urls = eval(JSON.parse(data.versions_urls));
-
-            }).fail(function () {
-                $.LoadingOverlay("hide");
-            });
-
-            function getData() {
-                $.ajax({
-                    url: '',
-                    type: "GET",
-                    async: true,
-                    success: function (data) {
-
-
+    JF.getSubmissions(function(response){
+     
+            for(var i=0; i<response.length; i++){
+                var answers_dict = response[i]['answers'];
+                for (var key in answers_dict){
+                    if (answers_dict.hasOwnProperty(key)) {
+                    console.log(answers_dict[key])           
+                        $('#main-cont').append("<div class='card' id='card'><div class='card-body'><h4 class='card-title'>"+answers_dict[key]['name']+"</h4><p class='card-text'>"+""+"</p></div></div><br>");
                     }
-                });
-            }
-
-            //getData();
+                }
+            }    
+        });
 
 });
 
