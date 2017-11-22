@@ -10,7 +10,7 @@ $(document).ready(function () {
         if(response!==null) {
             $.LoadingOverlay("hide");
                  var j=0;
-                for(var i=0; i<2; i++){
+                for(var i=0; i<response.length; i++){
                     var answers_dict = response[i]['answers'];
                     
                     for (var key in answers_dict){
