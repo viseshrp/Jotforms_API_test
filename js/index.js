@@ -16,7 +16,7 @@ $(document).ready(function () {
                     for (var key in answers_dict){
                         if (answers_dict.hasOwnProperty(key)) {
                         // console.log(answers_dict[key])           
-                            $('#main-cont').append("<div class='card' id='maincard_"+j+"'><div class='card-body'><p class='card-text'><strong>Name:</strong>&nbsp;&nbsp;<span class='searchcontent' id='cardcontent_"+j+"'>"+answers_dict[key]['name']+"</span></p><p class='card-text'><strong>Text:</strong>&nbsp;&nbsp;"+answers_dict[key]['text']+"</p><p class='card-text'><strong>Type:</strong>&nbsp;&nbsp;"+answers_dict[key]['type']+"</p></div></div><br>");
+                            $('#main-cont').append("<div id='maincard_"+j+"'><div class='card'><div class='card-body'><p class='card-text'><strong>Name:</strong>&nbsp;&nbsp;<span class='searchcontent' id='cardcontent_"+j+"'>"+answers_dict[key]['name']+"</span></p><p class='card-text'><strong>Text:</strong>&nbsp;&nbsp;"+answers_dict[key]['text']+"</p><p class='card-text'><strong>Type:</strong>&nbsp;&nbsp;"+answers_dict[key]['type']+"</p></div></div></br></div>");
                         }
                         j++;
                     }
